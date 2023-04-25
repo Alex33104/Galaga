@@ -32,16 +32,6 @@ public class GalagaController {
             if (k.getCode() == KeyCode.D) {
                 ship.setTranslateX(ship.getTranslateX() + ship_speed);
             }
-            if (k.getCode() == KeyCode.W) {
-                ship.setTranslateY(ship.getTranslateY() - ship_speed);
-            }
-            if (k.getCode() == KeyCode.S) {
-                ship.setTranslateY(ship.getTranslateY() + ship_speed);
-            }
         });
-    }
-    @FXML
-    public void left() {
-        ship.setTranslateX(ship.getTranslateX() - ship_speed);
     }
 }
