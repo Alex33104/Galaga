@@ -20,6 +20,5 @@ public class User {
     public double getW() {return this.w;}
 
     public double getH() {return this.h;}
-    // hello chris
 }
 
