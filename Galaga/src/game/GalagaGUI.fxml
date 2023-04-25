@@ -6,9 +6,9 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.GalagaController">
+<BorderPane fx:id="pane" maxHeight="472.0" maxWidth="465.0" prefHeight="472.0" prefWidth="465.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.GalagaController">
    <bottom>
-      <AnchorPane fx:id="ship" maxHeight="300.0" maxWidth="300.0" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="ship" prefHeight="178.0" prefWidth="267.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="99.0" layoutX="126.0" layoutY="174.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="46.0" />
             <Polygon fill="#ff1f1f" layoutX="76.0" layoutY="234.0" points="22.5, 52.0, 50.0, 40.0, 50.0, -22.0" smooth="false" stroke="BLACK" strokeType="INSIDE" />

@@ -15,9 +15,9 @@ import java.awt.*;
 
 public class GalagaController {
     @FXML
-    private Arc ship;
+    private AnchorPane ship;
     @FXML
-    private AnchorPane pane;
+    private BorderPane pane;
     final double ship_speed = 5.0;
 
     @FXML
@@ -25,16 +25,17 @@ public class GalagaController {
         User captain = new User(25, 25);
         UserView view = new UserView(captain);
         pane.setOnKeyPressed((KeyEvent k) -> {
+            System.out.println("you're here");
             if (k.getCode() == KeyCode.A) {
                 ship.setTranslateX(ship.getTranslateX() - ship_speed);
             }
             if (k.getCode() == KeyCode.D) {
                 ship.setTranslateX(ship.getTranslateX() + ship_speed);
             }
-            if (k.getCode() == KeyCode.UP) {
+            if (k.getCode() == KeyCode.W) {
                 ship.setTranslateY(ship.getTranslateY() - ship_speed);
             }
-            if (k.getCode() == KeyCode.DOWN) {
+            if (k.getCode() == KeyCode.S) {
                 ship.setTranslateY(ship.getTranslateY() + ship_speed);
             }
         });
