@@ -3,12 +3,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Arc?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.GalagaController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.GalagaController">
    <bottom>
-      <AnchorPane fx:id="pane" maxHeight="300.0" maxWidth="300.0" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="ship" maxHeight="300.0" maxWidth="300.0" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
          <children>
-            <Arc fx:id="ship" fill="#fff01f" layoutX="157.0" layoutY="150.0" length="270.0" radiusX="100.0" radiusY="100.0" startAngle="44.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="99.0" layoutX="126.0" layoutY="174.0" smooth="false" stroke="BLACK" strokeType="INSIDE" width="46.0" />
+            <Polygon fill="#ff1f1f" layoutX="76.0" layoutY="234.0" points="22.5, 52.0, 50.0, 40.0, 50.0, -22.0" smooth="false" stroke="BLACK" strokeType="INSIDE" />
+            <Polygon fill="#ff1f1f" layoutX="122.0" layoutY="234.0" points="78.5, 49.0, 50.0, 40.0, 50.0, -22.0" stroke="BLACK" strokeType="INSIDE" />
+            <Arc fill="#ff1f1f" layoutX="149.0" layoutY="174.0" length="180.0" radiusX="24.0" radiusY="23.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
          </children>
       </AnchorPane>
    </bottom>
