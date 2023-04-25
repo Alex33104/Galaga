@@ -9,7 +9,7 @@
    <bottom>
       <AnchorPane maxHeight="300.0" maxWidth="300.0" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
          <children>
-            <Arc fill="DODGERBLUE" layoutX="157.0" layoutY="150.0" length="270.0" radiusX="100.0" radiusY="100.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+            <Arc fill="#fff01f" layoutX="157.0" layoutY="150.0" length="270.0" radiusX="100.0" radiusY="100.0" startAngle="45.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
          </children>
       </AnchorPane>
    </bottom>
