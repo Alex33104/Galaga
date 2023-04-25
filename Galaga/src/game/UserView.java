@@ -11,9 +11,7 @@ public class UserView extends Parent {
     private Circle c;
 
     public UserView(User user) {
-
-
-
+        
     }
 
 }
