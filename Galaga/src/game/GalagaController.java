@@ -8,6 +8,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 
 import javax.swing.text.html.ImageView;
 import java.awt.*;
@@ -17,7 +18,7 @@ public class GalagaController {
     @FXML
     private AnchorPane ship;
     @FXML
-    private BorderPane pane;
+    private AnchorPane pane;
     final double ship_speed = 5.0;
 
     @FXML
@@ -25,13 +26,16 @@ public class GalagaController {
         User captain = new User(25, 25);
         UserView view = new UserView(captain);
         pane.setOnKeyPressed((KeyEvent k) -> {
-            System.out.println("you're here");
             if (k.getCode() == KeyCode.A) {
                 ship.setTranslateX(ship.getTranslateX() - ship_speed);
             }
             if (k.getCode() == KeyCode.D) {
                 ship.setTranslateX(ship.getTranslateX() + ship_speed);
             }
+            if (k.getCode() == KeyCode.Z) {
+                view.shoot();
+            }
         });
     }
+
 }
