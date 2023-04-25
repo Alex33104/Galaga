@@ -6,7 +6,11 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.GalagaController">
    <bottom>
+<<<<<<< HEAD
       <AnchorPane fx:id="pane" maxHeight="300.0" maxWidth="300.0" onMouseClicked="#initialize" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+=======
+      <AnchorPane fx:id="pane" maxHeight="300.0" maxWidth="300.0" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+>>>>>>> d941c837d116cc2a5c932a8c15e319a5c2371dde
          <children>
             <Arc fx:id="ship" fill="#fff01f" layoutX="157.0" layoutY="150.0" length="270.0" radiusX="100.0" radiusY="100.0" startAngle="44.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
          </children>
