@@ -5,10 +5,6 @@
 <?import javafx.scene.shape.Arc?>
 
 
-<<<<<<< HEAD
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.GalagaController">
-</AnchorPane>
-=======
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
       <AnchorPane maxHeight="300.0" maxWidth="300.0" prefHeight="300.0" prefWidth="300.0" BorderPane.alignment="CENTER">
@@ -18,4 +14,3 @@
       </AnchorPane>
    </bottom>
 </BorderPane>
->>>>>>> ea4248f7aa5759ca821ae5b5a5a05b00bd186974
