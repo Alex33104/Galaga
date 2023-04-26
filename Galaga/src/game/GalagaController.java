@@ -32,6 +32,7 @@ public class GalagaController {
         @Override
         public void handle(long now) {
             if (now - last > INTERVAL) {
+
                 bullet.setTranslateY(speed);
                 last = now;
                 speed -= 5;
