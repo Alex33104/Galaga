@@ -25,23 +25,12 @@ public class GalagaController {
         User captain = new User(25, 25);
         UserView view = new UserView(captain);
         pane.setOnKeyPressed((KeyEvent k) -> {
-            System.out.println("you're here");
-            if (k.getCode() == KeyCode.A) {
+            if (k.getCode() == KeyCode.LEFT) {
                 ship.setTranslateX(ship.getTranslateX() - ship_speed);
             }
-            if (k.getCode() == KeyCode.D) {
+            if (k.getCode() == KeyCode.RIGHT) {
                 ship.setTranslateX(ship.getTranslateX() + ship_speed);
             }
-            if (k.getCode() == KeyCode.W) {
-                ship.setTranslateY(ship.getTranslateY() - ship_speed);
-            }
-            if (k.getCode() == KeyCode.S) {
-                ship.setTranslateY(ship.getTranslateY() + ship_speed);
-            }
         });
-    }
-    @FXML
-    public void left() {
-        ship.setTranslateX(ship.getTranslateX() - ship_speed);
     }
 }
