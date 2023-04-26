@@ -36,8 +36,18 @@ public class GalagaController {
         User user = new User(90,120);
         UserView view = new UserView(user, ship);
         pane.setOnKeyPressed((KeyEvent k) -> {
+<<<<<<< HEAD
+            if (k.getCode() == KeyCode.LEFT) {
+                ship.setTranslateX(ship.getTranslateX() - ship_speed);
+            }
+            if (k.getCode() == KeyCode.RIGHT) {
+                ship.setTranslateX(ship.getTranslateX() + ship_speed);
+            }
+        });
+=======
             view.moveAndShoot(k);
         });
         view.update();
+>>>>>>> 3ae7108f387d417f890da5bf30493737aa475f04
     }
 }
