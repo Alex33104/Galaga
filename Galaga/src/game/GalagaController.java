@@ -6,6 +6,7 @@ import javafx.scene.input.KeyCode;
 import javafx.animation.AnimationTimer;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 
 import java.util.Queue;
 
@@ -15,6 +16,8 @@ public class GalagaController {
     private AnchorPane ship;
     @FXML
     private AnchorPane pane;
+    @FXML
+    private Rectangle bullet;
     private Queue<User> u;
     private final double ship_speed = 5.0;
     //Hey Chris this is just my attempt at animation for the bullets
@@ -26,8 +29,10 @@ public class GalagaController {
         private long last = 0;
 
         @Override
-        public void handle(long l) {
+        public void handle(long now) {
+            if (now - last > INTERVAL) {
 
+            }
         }
     }
     @FXML
@@ -36,18 +41,8 @@ public class GalagaController {
         User user = new User(90,120);
         UserView view = new UserView(user, ship);
         pane.setOnKeyPressed((KeyEvent k) -> {
-<<<<<<< HEAD
-            if (k.getCode() == KeyCode.LEFT) {
-                ship.setTranslateX(ship.getTranslateX() - ship_speed);
-            }
-            if (k.getCode() == KeyCode.RIGHT) {
-                ship.setTranslateX(ship.getTranslateX() + ship_speed);
-            }
-        });
-=======
             view.moveAndShoot(k);
         });
         view.update();
->>>>>>> 3ae7108f387d417f890da5bf30493737aa475f04
     }
 }
