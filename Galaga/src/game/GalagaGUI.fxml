@@ -20,5 +20,6 @@
             <Arc fill="#ff1f1f" layoutX="45.0" layoutY="41.0" length="180.0" radiusX="13.0" radiusY="26.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
          </children>
       </AnchorPane>
+      <Rectangle fx:id="bullet" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="26.0" layoutX="292.0" layoutY="244.0" stroke="BLACK" strokeType="INSIDE" width="16.0" />
    </children>
 </AnchorPane>
