@@ -19,10 +19,11 @@ public class GalagaController {
     @FXML
     private Rectangle bullet;
     private Queue<User> u;
+    private double speed = 0;
     private final double ship_speed = 5.0;
     //Hey Chris this is just my attempt at animation for the bullets
     private Movement clock;
-    private static class Movement extends AnimationTimer {
+    private class Movement extends AnimationTimer {
         private long FRAMES_PER_SEC = 50L;
         private long INTERVAL = 1000000000L / FRAMES_PER_SEC;
 
@@ -31,7 +32,9 @@ public class GalagaController {
         @Override
         public void handle(long now) {
             if (now - last > INTERVAL) {
-
+                bullet.setTranslateY(speed);
+                last = now;
+                speed -= 5;
             }
         }
     }
@@ -44,5 +47,7 @@ public class GalagaController {
             view.moveAndShoot(k);
         });
         view.update();
+        clock = new Movement();
+        clock.start();
     }
 }
