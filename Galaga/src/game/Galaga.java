@@ -1,6 +1,7 @@
 package game;
 
 import javafx.application.Application;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,8 +12,8 @@ public class Galaga extends Application {
     public void start(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader();
-            BorderPane root =
-                    (BorderPane)loader.load(getClass().getResource("GalagaGUI.fxml").openStream());
+            AnchorPane root =
+                    (AnchorPane) loader.load(getClass().getResource("GalagaGUI.fxml").openStream());
             primaryStage.setScene(new Scene(root));
             primaryStage.show();
             root.requestFocus();
