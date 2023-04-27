@@ -18,7 +18,7 @@ public class GalagaController {
     private AnchorPane pane;
     @FXML
     private Rectangle bullet;
-    private Queue<User> u;
+    private Queue<Alien> a;
     private double speed = 0;
     private final double ship_speed = 5.0;
     //Hey Chris this is just my attempt at animation for the bullets
