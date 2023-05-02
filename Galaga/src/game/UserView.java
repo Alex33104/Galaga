@@ -10,7 +10,7 @@ import javafx.scene.shape.Rectangle;
 public class UserView extends Parent {
     private final User user;
     private final AnchorPane ship;
-    private Rectangle rect;
+
 
 //tries to connect the controller to the view class, but it's harder than it looks
     public UserView(User user, AnchorPane ship) {
@@ -24,15 +24,6 @@ public class UserView extends Parent {
         System.out.println(user.getW()); //should be 120
 
 
-    }
-// supposed to create a new bullet and shoot it in a straight line
-    public void shoot() {
-        System.out.println("hello");
-        Rectangle bullet = new Rectangle();
-        bullet.setY(user.getY());
-        bullet.setX(user.getX());
-        bullet.setFill(Color.BLACK);
-        bullet.setStroke(Color.RED);
     }
 // new update method to hopefully see if it'll work when it's time
     public void update() {
@@ -48,10 +39,6 @@ public class UserView extends Parent {
         }
         if (k.getCode() == KeyCode.D) {
             ship.setTranslateX(ship.getTranslateX() + 5.0);
-        }
-        if (k.getCode() == KeyCode.Z) {
-            Bullet bullet = new Bullet(rect);
-            shoot();
         }
     }
 }
