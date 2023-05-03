@@ -2,11 +2,16 @@ package game;
 
 import javafx.fxml.FXML;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.animation.AnimationTimer;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.control.Label;
+
+import java.awt.*;
 import java.util.Random;
 
 import java.util.Stack;
@@ -17,6 +22,12 @@ public class GalagaController {
     private AnchorPane target;
     @FXML
     private AnchorPane ship;
+    @FXML
+    private Label hits;
+    @FXML
+    private Label total;
+    private int hit = 0;
+    private int tot = 0;
     @FXML
     private AnchorPane pane;
     @FXML
@@ -38,9 +49,9 @@ public class GalagaController {
                 bullet.setTranslateY(speed);
                 last = now;
                 speed -= 5;
-                System.out.println(bullet.getTranslateX());
-                if (difference() > 0 && difference() <= 25) {
-                    if (bullet.getTranslateY() <= -500) {
+//                System.out.println(bullet.getTranslateX());
+                if (difference() >= -5 && difference() <= 25) {
+                    if (bullet.getTranslateY() <= -475) {
                         location.push(rand.nextDouble(250) - 250);
                         target.setTranslateX(location.pop());
                         bullet.setTranslateX(ship.getTranslateX());
@@ -48,6 +59,11 @@ public class GalagaController {
                         speed = 0;
                         clock.stop();
                         move = true;
+                        hit += 1;
+                        tot += 1;
+                        hits.setText("Hit " + hit + " targets");
+                        total.setText("Fired " + tot + " bullets");
+
                     }
                 }
                 if (bullet.getTranslateY() <= - 750) {
@@ -55,6 +71,8 @@ public class GalagaController {
                     speed = 0;
                     clock.stop();
                     move = true;
+                    tot += 1;
+                    total.setText("Fired " + tot + " bullets");
                 }
             }
         }
@@ -63,8 +81,10 @@ public class GalagaController {
     public void initialize() {
         // creating new user and using the ship anchor pane to do something with it
         User user = new User(90,120);
+        hits.setText("Hit " + hit + " targets");
+        total.setText("Fired " + tot + " bullets");
         UserView view = new UserView(user, ship);
-        location.push(rand.nextDouble(250) - 250);
+        location.push(rand.nextDouble(250));
         target.setTranslateX(location.pop());
         pane.setOnKeyPressed((KeyEvent k) -> {
             if (k.getCode() == KeyCode.Z) {
