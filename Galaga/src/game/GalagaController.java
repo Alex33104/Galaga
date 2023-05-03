@@ -41,13 +41,17 @@ public class GalagaController {
                 last = now;
                 speed -= 5;
                 System.out.println(bullet.getTranslateX());
-                if (difference() <= 10 && difference() >= -10) {
+                if (difference() > 0 && difference() <= 25) {
                     if (bullet.getTranslateY() <= -500) {
                         target.setTranslateX(rand.nextInt(250) - 250);
+                        bullet.setTranslateX(ship.getTranslateX());
+                        bullet.setTranslateY(ship.getTranslateY());
+                        speed = 0;
+                        clock.stop();
+                        move = true;
                     }
                 }
                 if (bullet.getTranslateY() <= - 750) {
-                    System.out.println(ship.getTranslateY());
                     bullet.setTranslateX(ship.getTranslateX());
                     speed = 0;
                     clock.stop();
@@ -60,10 +64,8 @@ public class GalagaController {
     public void initialize() {
         // creating new user and using the ship anchor pane to do something with it
         User user = new User(90,120);
-        target.setTranslateX(rand.nextInt(250) - 250);
-        target.setTranslateX(30);
-        System.out.println(target.getTranslateX());
         UserView view = new UserView(user, ship);
+        target.setTranslateX(rand.nextInt(250) - 250);
         pane.setOnKeyPressed((KeyEvent k) -> {
             if (k.getCode() == KeyCode.Z) {
                 clock.start();
@@ -77,7 +79,7 @@ public class GalagaController {
                     bullet.setTranslateX(bullet.getTranslateX() + 5);
                 }
             }
-            view.moveAndShoot(k);
+            view.moveShip(k);
 
         });
         view.update();
@@ -89,12 +91,9 @@ public class GalagaController {
             if (k.getCode() == KeyCode.Z) {
                 clock.start();
             }
-            if (k.getCode() == KeyCode.A) {
-                bullet.setTranslateX(ship.getTranslateX());
-            }
         });
     }
     public double difference() {
-        return bullet.getTranslateX() - (target.getTranslateX() - 20);
+        return bullet.getTranslateX() - target.getTranslateX();
     }
 }

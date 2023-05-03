@@ -11,8 +11,6 @@ public class User {
         this.w = w;
         this.h = h;
     }
-    public void setX(float x) {this.x = x;}
-
     public float getX() {return this.x;}
 
     public float getY() {return this.y;}
@@ -21,6 +19,5 @@ public class User {
 
     public double getH() {return this.h;}
     // new move method for the animation
-    public void move() {x += dx;}
 }
 
