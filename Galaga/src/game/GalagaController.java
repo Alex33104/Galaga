@@ -2,8 +2,6 @@ package game;
 
 import javafx.fxml.FXML;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.animation.AnimationTimer;
 import javafx.scene.input.KeyEvent;
@@ -11,7 +9,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Label;
 
-import java.awt.*;
 import java.util.Random;
 
 import java.util.Stack;
@@ -49,7 +46,6 @@ public class GalagaController {
                 bullet.setTranslateY(speed);
                 last = now;
                 speed -= 5;
-//                System.out.println(bullet.getTranslateX());
                 if (difference() >= -5 && difference() <= 25) {
                     if (bullet.getTranslateY() <= -475) {
                         location.push(rand.nextDouble(250) - 250);
