@@ -24,15 +24,12 @@ public class GalagaController {
     private boolean move = true;
     private double speed = 0;
     private Random rand = new Random();
-    private final double ship_speed = 5.0;
     //Hey Chris this is just my attempt at animation for the bullets
     private Movement clock;
     private class Movement extends AnimationTimer {
         private long FRAMES_PER_SEC = 50L;
         private long INTERVAL = 1000000000L / FRAMES_PER_SEC;
-
         private long last = 0;
-
         @Override
         public void handle(long now) {
             if (now - last > INTERVAL) {
@@ -80,7 +77,6 @@ public class GalagaController {
                 }
             }
             view.moveShip(k);
-
         });
         view.update();
         clock = new Movement();
