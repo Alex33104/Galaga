@@ -9,9 +9,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Label;
 
+import java.io.File;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 import java.util.Random;
 
 import java.util.Stack;
+
+
 
 
 public class GalagaController {
@@ -33,8 +39,9 @@ public class GalagaController {
     private boolean move = true;
     private double speed = 0;
     private Random rand = new Random();
-    //Hey Chris this is just my attempt at animation for the bullets
     private Movement clock;
+
+
     private class Movement extends AnimationTimer {
         private long FRAMES_PER_SEC = 50L;
         private long INTERVAL = 1000000000L / FRAMES_PER_SEC;
@@ -84,6 +91,10 @@ public class GalagaController {
         target.setTranslateX(location.pop());
         pane.setOnKeyPressed((KeyEvent k) -> {
             if (k.getCode() == KeyCode.Z) {
+                String blaster = "/Users/alexanderpangelinan/Documents/GitHub/Galaga/Galaga/src/game/blaster-2-81267.mp3";
+                Media hit = new Media(new File(blaster).toURI().toString());
+                MediaPlayer mediaPlayer = new MediaPlayer(hit);
+                mediaPlayer.play();
                 clock.start();
                 move = false;
             }
