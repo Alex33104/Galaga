@@ -9,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import java.util.Random;
 
-import java.util.Queue;
+import java.util.Stack;
 
 
 public class GalagaController {
@@ -21,6 +21,7 @@ public class GalagaController {
     private AnchorPane pane;
     @FXML
     private Rectangle bullet;
+    private Stack<Double> location = new Stack<>();
     private boolean move = true;
     private double speed = 0;
     private Random rand = new Random();
@@ -40,7 +41,8 @@ public class GalagaController {
                 System.out.println(bullet.getTranslateX());
                 if (difference() > 0 && difference() <= 25) {
                     if (bullet.getTranslateY() <= -500) {
-                        target.setTranslateX(rand.nextInt(250) - 250);
+                        location.push(rand.nextDouble(250) - 250);
+                        target.setTranslateX(location.pop());
                         bullet.setTranslateX(ship.getTranslateX());
                         bullet.setTranslateY(ship.getTranslateY());
                         speed = 0;
@@ -62,7 +64,8 @@ public class GalagaController {
         // creating new user and using the ship anchor pane to do something with it
         User user = new User(90,120);
         UserView view = new UserView(user, ship);
-        target.setTranslateX(rand.nextInt(250) - 250);
+        location.push(rand.nextDouble(250) - 250);
+        target.setTranslateX(location.pop());
         pane.setOnKeyPressed((KeyEvent k) -> {
             if (k.getCode() == KeyCode.Z) {
                 clock.start();
