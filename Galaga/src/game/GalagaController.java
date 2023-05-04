@@ -18,8 +18,6 @@ import java.util.Random;
 import java.util.Stack;
 
 
-
-
 public class GalagaController {
     @FXML
     private AnchorPane target;
@@ -52,7 +50,7 @@ public class GalagaController {
 
                 bullet.setTranslateY(speed);
                 last = now;
-                speed -= 5;
+                speed -= 40;
                 if (difference() >= -5 && difference() <= 25) {
                     if (bullet.getTranslateY() <= -475) {
                         location.push(rand.nextDouble(250) - 250);

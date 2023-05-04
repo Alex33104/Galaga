@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -41,7 +42,15 @@
             <Arc fill="#ff1f1f" layoutX="45.0" layoutY="41.0" length="180.0" radiusX="13.0" radiusY="26.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
          </children>
       </AnchorPane>
-      <Label fx:id="total" layoutX="331.0" layoutY="786.0" text="Label" />
-      <Label fx:id="hits" layoutX="239.0" layoutY="786.0" text="Label" />
+      <AnchorPane layoutX="217.0" layoutY="786.0" prefHeight="17.0" prefWidth="153.0">
+         <children>
+            <Label fx:id="hits" prefHeight="17.0" prefWidth="92.0" text="Label" textFill="WHITE" />
+            <Label fx:id="total" text="Label" textFill="WHITE">
+               <padding>
+                  <Insets left="120.0" />
+               </padding>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
